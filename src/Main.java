@@ -1,4 +1,5 @@
 import essentials.Account;
+import essentials.MailService;
 import essentials.TaxCalculator;
 import essentials.TaxCalculator2019;
 
@@ -13,11 +14,13 @@ public class Main {
 //        TaxCalculator calculator = getCalculator();
 //        calculator.calculateTax();
 
-        var account = new Account();
-        account.deposit(10);
-        account.withdraw(2);
-        System.out.println(account.getBalance());
+//        var account = new Account();
+//        account.deposit(10);
+//        account.withdraw(2);
+//        System.out.println(account.getBalance());
 
+        MailService service = new MailService();
+        service.sendEmail();
     }
 
     public static TaxCalculator getCalculator() {
