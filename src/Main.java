@@ -1,7 +1,4 @@
-import essentials.Account;
-import essentials.MailService;
-import essentials.TaxCalculator;
-import essentials.TaxCalculator2019;
+import essentials.*;
 
 /**
  * This is a course that I've taken to learn about the classic design patterns.
@@ -19,8 +16,13 @@ public class Main {
 //        account.withdraw(2);
 //        System.out.println(account.getBalance());
 
-        MailService service = new MailService();
-        service.sendEmail();
+//        MailService service = new MailService();
+//        service.sendEmail();
+
+        // TextBox
+        // There's more about inheritance in the other Java Course by Mosh Hamedani
+        var textbox = new TextBox();
+        textbox.enable();
     }
 
     public static TaxCalculator getCalculator() {
