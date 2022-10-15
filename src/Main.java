@@ -1,3 +1,4 @@
+import essentials.Account;
 import essentials.TaxCalculator;
 import essentials.TaxCalculator2019;
 
@@ -9,8 +10,14 @@ public class Main {
     public static void main(String[] args) {
 //        User user = new User("Nitai");
 //        user.sayHello();
-        TaxCalculator calculator = getCalculator();
-        calculator.calculateTax();
+//        TaxCalculator calculator = getCalculator();
+//        calculator.calculateTax();
+
+        var account = new Account();
+        account.deposit(10);
+        account.withdraw(2);
+        System.out.println(account.getBalance());
+
     }
 
     public static TaxCalculator getCalculator() {
