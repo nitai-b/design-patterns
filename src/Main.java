@@ -1,6 +1,10 @@
 import essentials.*;
 import patterns.memento.Editor;
 import patterns.memento.History;
+import patterns.state.BrushTool;
+import patterns.state.Canvas;
+import patterns.state.SelectionTool;
+import patterns.state.Tool;
 
 /**
  * This is a course that I've taken to learn about the classic design patterns.
@@ -8,19 +12,26 @@ import patterns.memento.History;
  */
 public class Main {
     public static void main(String[] args) {
-        var editor = new Editor();
-        var history = new History();
 
-        editor.setContent("a");
-        history.push(editor.createState());
+        Canvas canvas = new Canvas();
 
-        editor.setContent("b");
-        history.push(editor.createState());
+        canvas.setCurrentTool(new BrushTool());
+        canvas.mouseDown();
+        canvas.mouseUp();
 
-        editor.setContent("c");
-        editor.restore(history.pop());
+//        var editor = new Editor();
+//        var history = new History();
 
-        System.out.println(editor.getContent());
+//        editor.setContent("a");
+//        history.push(editor.createState());
+
+//        editor.setContent("b");
+//        history.push(editor.createState());
+
+//        editor.setContent("c");
+//        editor.restore(history.pop());
+
+//        System.out.println(editor.getContent());
 //        User user = new User("Nitai");
 //        user.sayHello();
 //        TaxCalculator calculator = getCalculator();
@@ -56,8 +67,6 @@ public class Main {
     /**
      * This method takes in an abstract class as the parameter, and from this it can draw different elements
      * See main function for the client code (the code that uses these polymorphic classes).
-     *
-     * @param control
      */
     public static void drawUIControl(UIControl control) {
         control.draw();
