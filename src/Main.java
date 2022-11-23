@@ -1,9 +1,8 @@
 import essentials.TaxCalculator;
 import essentials.TaxCalculator2019;
 import essentials.UIControl;
-import patterns.strategy.BlackAndWhiteFilter;
-import patterns.strategy.ImageStorage;
-import patterns.strategy.JpegCompressor;
+import patterns.composite.Group;
+import patterns.composite.Shape;
 
 /**
  * This is a course that I've taken to learn about the classic design patterns.
@@ -12,8 +11,23 @@ import patterns.strategy.JpegCompressor;
 public class Main {
 
     public static void main(String[] args) {
-        var imageStorage = new ImageStorage();
-        imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+        var group1 = new Group();
+        group1.add(new Shape());
+        group1.add(new Shape());
+
+        var group2 = new Group();
+        group2.add(new Shape());
+        group2.add(new Shape());
+
+        var group = new Group();
+        group.add(group1);
+
+        group.render();
+        (new Shape()).render();
+        (new Group()).render();
+
+//        var imageStorage = new ImageStorage();
+//        imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
 
 //        var history = new BrowserHistory();
 //        history.push("a");
