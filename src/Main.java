@@ -1,12 +1,6 @@
 import essentials.*;
-import iterator.BrowserHistory;
-import iterator.Iterator;
-import patterns.memento.Editor;
-import patterns.memento.History;
-import patterns.state.BrushTool;
-import patterns.state.Canvas;
-import patterns.state.SelectionTool;
-import patterns.state.Tool;
+import patterns.iterator.BrowserHistory;
+import patterns.iterator.Iterator;
 
 /**
  * This is a course that I've taken to learn about the classic design patterns.
