@@ -1,24 +1,31 @@
-import essentials.*;
-import patterns.iterator.BrowserHistory;
-import patterns.iterator.Iterator;
+import essentials.TaxCalculator;
+import essentials.TaxCalculator2019;
+import essentials.UIControl;
+import patterns.strategy.BlackAndWhiteFilter;
+import patterns.strategy.ImageStorage;
+import patterns.strategy.JpegCompressor;
 
 /**
  * This is a course that I've taken to learn about the classic design patterns.
  * The instructor is called Mosh Hamedani.
  */
 public class Main {
-    public static void main(String[] args) {
-        var history = new BrowserHistory();
-        history.push("a");
-        history.push("b");
-        history.push("c");
 
-        Iterator<String> iterator = history.createIterator();
-        while (iterator.hasNext()) {
-            var url = iterator.current();
-            System.out.println(url);
-            iterator.next();
-        }
+    public static void main(String[] args) {
+        var imageStorage = new ImageStorage();
+        imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+
+//        var history = new BrowserHistory();
+//        history.push("a");
+//        history.push("b");
+//        history.push("c");
+//
+//        Iterator<String> iterator = history.createIterator();
+//        while (iterator.hasNext()) {
+//            var url = iterator.current();
+//            System.out.println(url);
+//            iterator.next();
+//        }
 
 //        Canvas canvas = new Canvas();
 
