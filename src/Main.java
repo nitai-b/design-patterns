@@ -1,4 +1,6 @@
 import essentials.*;
+import iterator.BrowserHistory;
+import iterator.Iterator;
 import patterns.memento.Editor;
 import patterns.memento.History;
 import patterns.state.BrushTool;
@@ -12,12 +14,23 @@ import patterns.state.Tool;
  */
 public class Main {
     public static void main(String[] args) {
+        var history = new BrowserHistory();
+        history.push("a");
+        history.push("b");
+        history.push("c");
 
-        Canvas canvas = new Canvas();
+        Iterator<String> iterator = history.createIterator();
+        while (iterator.hasNext()) {
+            var url = iterator.current();
+            System.out.println(url);
+            iterator.next();
+        }
 
-        canvas.setCurrentTool(new BrushTool());
-        canvas.mouseDown();
-        canvas.mouseUp();
+//        Canvas canvas = new Canvas();
+
+//        canvas.setCurrentTool(new BrushTool());
+//        canvas.mouseDown();
+//        canvas.mouseUp();
 
 //        var editor = new Editor();
 //        var history = new History();
