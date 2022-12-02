@@ -3,6 +3,7 @@ import essentials.TaxCalculator2019;
 import essentials.UIControl;
 import patterns.composite.Group;
 import patterns.composite.Shape;
+import patterns.template.TransferMoneyTask;
 
 /**
  * This is a course that I've taken to learn about the classic design patterns.
@@ -11,20 +12,24 @@ import patterns.composite.Shape;
 public class Main {
 
     public static void main(String[] args) {
-        var group1 = new Group();
-        group1.add(new Shape());
-        group1.add(new Shape());
+        var task = new TransferMoneyTask();
+        task.execute();
 
-        var group2 = new Group();
-        group2.add(new Shape());
-        group2.add(new Shape());
 
-        var group = new Group();
-        group.add(group1);
-
-        group.render();
-        (new Shape()).render();
-        (new Group()).render();
+//        var group1 = new Group();
+//        group1.add(new Shape());
+//        group1.add(new Shape());
+//
+//        var group2 = new Group();
+//        group2.add(new Shape());
+//        group2.add(new Shape());
+//
+//        var group = new Group();
+//        group.add(group1);
+//
+//        group.render();
+//        (new Shape()).render();
+//        (new Group()).render();
 
 //        var imageStorage = new ImageStorage();
 //        imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
