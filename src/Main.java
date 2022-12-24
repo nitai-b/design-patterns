@@ -1,8 +1,7 @@
 import essentials.TaxCalculator;
 import essentials.TaxCalculator2019;
 import essentials.UIControl;
-import patterns.command.AddCustomerCommand;
-import patterns.command.CustomerService;
+import patterns.command.*;
 import patterns.command.fx.Button;
 import patterns.composite.Group;
 import patterns.composite.Shape;
@@ -18,5 +17,11 @@ public class Main {
         var command = new AddCustomerCommand(service);
         var button = new Button(command);
         button.click();
+
+        var composite = new CompositeCommand();
+        composite.add(new ResizeCommand());
+        composite.add(new BlackAndWhiteCommand());
+        composite.execute();
+        composite.execute();
     }
 }
